@@ -114,6 +114,29 @@ python ids_script.py
 
 The script will connect to the router and begin monitoring. You will see output in the console when an attack is detected and blocked.
 
+Running with Docker
+You can also run this project inside a Docker container for easier deployment and dependency management.
+
+1. Build the Docker Image:
+Ensure you have Docker installed. Then, open your terminal in the project directory (where the Dockerfile is) and run:
+
+docker build -t mikrotik-ai-ids .
+
+2. Run the Docker Container:
+After building the image, run the container with this command:
+
+docker run --name my-ids-container --restart unless-stopped -d mikrotik-ai-ids
+
+--name: Gives your container a memorable name.
+
+--restart unless-stopped: Ensures the container automatically restarts if the server reboots.
+
+-d: Runs the container in detached mode (in the background).
+
+To see the live logs of your running container, use this command:
+
+docker logs -f my-ids-container
+
 Disclaimer
 This script is provided as a proof-of-concept. While it is effective, please test it thoroughly in a controlled environment before deploying it in a critical production network.
 
@@ -227,6 +250,29 @@ MIKROTIK_PASS = 'your_password'  # رمز عبور API که تنظیم کردی�
 python ids_script.py
 
 اسکریپت به روتر متصل شده و مانیتورینگ را آغاز می‌کند. هنگام شناسایی و مسدودسازی یک حمله، خروجی مربوطه در کنسول نمایش داده خواهد شد.
+
+اجرا با داکر (Docker)
+شما همچنین می‌توانید این پروژه را برای مدیریت ساده‌تر وابستگی‌ها و استقرار آسان، داخل یک کانتینر داکر اجرا کنید.
+
+۱. ساخت ایمیج داکر:
+مطمئن شوید داکر روی سیستم شما نصب است. سپس ترمینال خود را در پوشه پروژه (جایی که Dockerfile قرار دارد) باز کرده و دستور زیر را اجرا کنید:
+
+docker build -t mikrotik-ai-ids .
+
+۲. اجرای کانتینر داکر:
+پس از ساخت ایمیج، کانتینر را با دستور زیر اجرا کنید:
+
+docker run --name my-ids-container --restart unless-stopped -d mikrotik-ai-ids
+
+--name: یک نام مشخص برای کانتینر شما تعیین می‌کند.
+
+--restart unless-stopped: تضمین می‌کند که اگر سرور ریبوت شد، کانتینر به صورت خودکار دوباره اجرا شود.
+
+-d: کانتینر را در حالت detached (در پس‌زمینه) اجرا می‌کند.
+
+برای مشاهده لاگ‌های زنده کانتینر در حال اجرا، از دستور زیر استفاده کنید:
+
+docker logs -f my-ids-container
 
 سلب مسئولیت
 این اسکریپت به عنوان یک نمونه مفهومی (Proof-of-Concept) ارائه شده است. اگرچه این اسکریپت کارآمد است، لطفاً قبل از استفاده از آن در یک شبکه حساس و عملیاتی، آن را به طور کامل در یک محیط آزمایشی تست کنید.
