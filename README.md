@@ -103,7 +103,7 @@ Open ids_script.py in a text editor.
 
 Update the configuration variables at the top of the file with your router's details:
 
-MIKROTIK_HOST = '192.168.88.1'  # Your router's IP
+MIKROTIK_HOST = '192.188.88.1'  # Your router's IP
 MIKROTIK_USER = 'py-script'      # The API username you created
 MIKROTIK_PASS = 'your_password'  # The API password you set
 
